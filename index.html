@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        /* 头部导航 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav {
+            margin-top: 1rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #3498db;
+        }
+        /* 主体内容布局 */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+        /* 文章卡片 */
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        .article-title {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .article-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .article-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .article-desc {
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        .read-more {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* 侧边栏 */
+        .sidebar {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        .widget {
+            margin-bottom: 2rem;
+        }
+        .widget-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .widget ul {
+            list-style: none;
+        }
+        .widget ul li {
+            margin-bottom: 0.5rem;
+        }
+        .widget ul li a {
+            color: #34495e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .widget ul li a:hover {
+            color: #3498db;
+        }
+        /* 底部 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        /* 响应式适配：手机端自动适配 */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <h1>我的个人博客</h1>
+        <nav class="nav">
+            <a href="#home">首页</a>
+            <a href="#articles">文章</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系方式</a>
+        </nav>
+    </header>
+
+    <!-- 主体内容区 -->
+    <div class="container" id="home">
+        <!-- 左侧文章列表 -->
+        <main>
+            <div class="article-card">
+                <h2 class="article-title"><a href="#">零基础搭建网站完整教程</a></h2>
+                <div class="article-meta">发布时间：2026-03-26 | 分类：网站搭建</div>
+                <p class="article-desc">很多新手想搭建自己的网站，却不知道从哪里下手，这篇文章带你从零开始，一步步搭建属于自己的网站，包含完整代码和部署教程...</p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </div>
+
+            <div class="article-card">
+                <h2 class="article-title"><a href="#">网站变现的5个靠谱方法</a></h2>
+                <div class="article-meta">发布时间：2026-03-20 | 分类：运营变现</div>
+                <p class="article-desc">网站搭建好之后，怎么通过网站赚钱？这篇文章分享5个新手也能上手的变现方式，从低门槛到高收益，手把手教你变现...</p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </div>
+
+            <div class="article-card">
+                <h2 class="article-title"><a href="#">SEO入门教程，让你的网站获得免费流量</a></h2>
+                <div class="article-meta">发布时间：2026-03-15 | 分类：SEO优化</div>
+                <p class="article-desc">没有流量的网站，再好的内容也没人看。这篇文章带你从零学习SEO，优化你的网站，从搜索引擎获得免费精准流量...</p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </div>
+        </main>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">关于我</h3>
+                <p>一个热爱分享的互联网人，专注网站搭建、运营变现、SEO优化，欢迎一起交流学习~</p>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">文章分类</h3>
+                <ul>
+                    <li><a href="#">网站搭建</a></li>
+                    <li><a href="#">运营变现</a></li>
+                    <li><a href="#">SEO优化</a></li>
+                    <li><a href="#">工具分享</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 底部版权区 -->
+    <footer>
+        <p>© 2026 我的个人博客 版权所有</p>
+        <p style="margin-top: 0.5rem;">ICP备案号：粤ICP备XXXXXX号</p>
+    </footer>
+
+    <!-- 简单交互JS -->
+    <script>
+        // 锚点平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
